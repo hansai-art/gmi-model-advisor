@@ -1,0 +1,32 @@
+test_empty_catalog_fails (test_advisor.CollectorTests.test_empty_catalog_fails) ... ok
+test_failed_collection_keeps_previous_snapshot (test_advisor.CollectorTests.test_failed_collection_keeps_previous_snapshot) ... ok
+test_incomplete_asl_schema_fails (test_advisor.CollectorTests.test_incomplete_asl_schema_fails) ... ok
+test_missing_key_makes_no_network_request (test_advisor.CollectorTests.test_missing_key_makes_no_network_request) ... ok
+test_private_atomic_output (test_advisor.CollectorTests.test_private_atomic_output) ... ok
+test_schedule_optin (test_advisor.CollectorTests.test_schedule_optin) ... ok
+test_schedule_requires_explicit_license_attestation (test_advisor.CollectorTests.test_schedule_requires_explicit_license_attestation) ... ok
+test_three_dimensions_and_catalog_only (test_advisor.CollectorTests.test_three_dimensions_and_catalog_only) ... ok
+test_wrong_dimension_fails (test_advisor.CollectorTests.test_wrong_dimension_fails) ... ok
+test_combined_cannot_be_axis_score (test_advisor.EvidenceTests.test_combined_cannot_be_axis_score) ... ok
+test_different_versions_stay_separate (test_advisor.EvidenceTests.test_different_versions_stay_separate) ... ok
+test_docs_only_is_conditional (test_advisor.EvidenceTests.test_docs_only_is_conditional) ... ok
+test_exact_intersection (test_advisor.EvidenceTests.test_exact_intersection) ... ok
+test_fresh_fetch_does_not_fix_stale_run (test_advisor.EvidenceTests.test_fresh_fetch_does_not_fix_stale_run) ... ok
+test_future_and_unknown_time_rejected (test_advisor.EvidenceTests.test_future_and_unknown_time_rejected) ... ok
+test_identity_requires_citation (test_advisor.EvidenceTests.test_identity_requires_citation) ... ok
+test_nan_rejected (test_advisor.EvidenceTests.test_nan_rejected) ... ok
+test_partial_coverage_excluded (test_advisor.EvidenceTests.test_partial_coverage_excluded) ... ok
+test_reasoning_uses_48_hour_limit (test_advisor.EvidenceTests.test_reasoning_uses_48_hour_limit) ... ok
+test_ties_preserved_despite_score (test_advisor.EvidenceTests.test_ties_preserved_despite_score) ... ok
+test_unsupported_task_no_winner (test_advisor.EvidenceTests.test_unsupported_task_no_winner) ... ok
+test_http_error_does_not_echo_body_or_key (test_transport.TransportTests.test_http_error_does_not_echo_body_or_key) ... ok
+test_invalid_json_rejected (test_transport.TransportTests.test_invalid_json_rejected) ... ok
+test_network_error_redacted (test_transport.TransportTests.test_network_error_redacted) ... ok
+test_redirect_never_forwards_credential (test_transport.TransportTests.test_redirect_never_forwards_credential) ... ok
+test_size_limit (test_transport.TransportTests.test_size_limit) ... ok
+test_valid_json_and_timeout (test_transport.TransportTests.test_valid_json_and_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.009s
+
+OK

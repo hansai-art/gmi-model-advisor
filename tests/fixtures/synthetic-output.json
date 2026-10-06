@@ -1,0 +1,88 @@
+{
+  "task": "coding",
+  "checked_at": "2026-10-06T04:00:00+00:00",
+  "status": "evidence_groups_not_universal_recommendation",
+  "groups": [
+    {
+      "comparison": {
+        "source": "aistupidlevel.info",
+        "suite_version": "synthetic-suite-v1",
+        "metric": "coding",
+        "coverage": "7/7",
+        "language": "English"
+      },
+      "top_tie_group": [
+        "synthetic/model-a",
+        "synthetic/model-b"
+      ],
+      "candidates": [
+        {
+          "task": "coding",
+          "gmi_model_id": "synthetic/model-a",
+          "gmi_catalog_id": "synthetic/model-a",
+          "availability": "account_catalog",
+          "gmi_source_url": "https://example.test/gmi",
+          "gmi_checked_at": "2026-10-06T03:00:00Z",
+          "identity_verified": true,
+          "mapping_source_url": "https://example.test/identity",
+          "benchmark_model_id": "synthetic-a-v1",
+          "benchmark_deployment": "synthetic test host",
+          "source_id": "aistupidlevel.info",
+          "source_url": "https://example.test/fixture-only",
+          "measured_at": "2026-10-06T00:00:00Z",
+          "fetched_at": "2026-10-06T03:00:00Z",
+          "suite_version": "synthetic-suite-v1",
+          "metric": "coding",
+          "coverage": "7/7",
+          "coverage_complete": true,
+          "language": "English",
+          "score": 83,
+          "source_rank": 1
+        },
+        {
+          "task": "coding",
+          "gmi_model_id": "synthetic/model-b",
+          "gmi_catalog_id": "synthetic/model-b",
+          "availability": "account_catalog",
+          "gmi_source_url": "https://example.test/gmi",
+          "gmi_checked_at": "2026-10-06T03:00:00Z",
+          "identity_verified": true,
+          "mapping_source_url": "https://example.test/identity",
+          "benchmark_model_id": "synthetic-a-v1",
+          "benchmark_deployment": "synthetic test host",
+          "source_id": "aistupidlevel.info",
+          "source_url": "https://example.test/fixture-only",
+          "measured_at": "2026-10-06T00:00:00Z",
+          "fetched_at": "2026-10-06T03:00:00Z",
+          "suite_version": "synthetic-suite-v1",
+          "metric": "coding",
+          "coverage": "7/7",
+          "coverage_complete": true,
+          "language": "English",
+          "score": 81,
+          "source_rank": 1
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "model_id": "synthetic/model-c",
+      "reasons": [
+        "benchmark_stale_or_time_unknown"
+      ]
+    },
+    {
+      "model_id": "synthetic/model-d",
+      "reasons": [
+        "id_not_exact_catalog_match"
+      ]
+    }
+  ],
+  "limits": [
+    "Evidence truth and mapping citations require human/assistant review",
+    "Do not merge groups or break source ties",
+    "Cost and latency require independent GMI verification",
+    "Benchmark deployment can differ from GMI"
+  ]
+}

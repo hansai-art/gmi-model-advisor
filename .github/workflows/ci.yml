@@ -1,0 +1,30 @@
+name: Offline tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run offline unit and HTTP boundary tests
+        run: python -m unittest discover -s tests -v
+      - name: Check CLI fixture output
+        run: |
+          python skill/scripts/check_evidence.py tests/fixtures/synthetic-evidence.json --task coding --now 2026-10-06T04:00:00Z > "$RUNNER_TEMP/evidence-output.json"
+          diff -u tests/fixtures/synthetic-output.json "$RUNNER_TEMP/evidence-output.json"
+      - name: Compile Python source
+        run: python -m compileall -q skill/scripts tests

@@ -1,0 +1,33 @@
+name: Optional private daily evidence collection
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 1 * * *'
+permissions:
+  contents: read
+jobs:
+  collect:
+    # Defaults to disabled. A public repository cannot run this job.
+    if: github.event.repository.private == true && vars.ENABLE_DAILY_EVIDENCE == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check local behavior
+        run: python -m unittest discover -s tests -v
+      - name: Collect authorized evidence only
+        env:
+          GMI_API_KEY: ${{ secrets.GMI_API_KEY }}
+          ASL_API_KEY: ${{ secrets.ASL_API_KEY }}
+          ASL_AUTOMATION_AUTHORIZED: ${{ vars.ASL_AUTOMATION_AUTHORIZED }}
+        run: python skill/scripts/collect_evidence.py --scheduled --out data/private/snapshot.json
+      - name: Save private evidence, not a leaderboard or recommendation
+        uses: actions/upload-artifact@v4
+        with:
+          name: private-model-evidence
+          path: data/private/snapshot.json
+          retention-days: 3
+          if-no-files-found: error

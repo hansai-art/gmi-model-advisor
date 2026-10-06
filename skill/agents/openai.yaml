@@ -1,0 +1,4 @@
+interface:
+  display_name: "GMI 任務選模助手"
+  short_description: "即時核對獨立任務評測與 GMI API 供應清單，推薦可用模型"
+  default_prompt: "使用 $gmi-model-advisor，先更新可查證資料，再依我的任務推薦 GMI API 模型。"
